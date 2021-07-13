@@ -34,7 +34,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class listItem extends AppCompatActivity {
+public class listItem extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
 
     ListView listView;
@@ -48,7 +48,7 @@ public class listItem extends AppCompatActivity {
         setContentView(R.layout.list_item);
 
         listView = (ListView) findViewById(R.id.lv_items);
-//        listView.setOnItemClickListener(this);
+        listView.setOnItemClickListener(this);
         editTextSearch = (EditText)findViewById(R.id.editTextSearch);
 
         getItems();
@@ -100,7 +100,7 @@ public class listItem extends AppCompatActivity {
 
                 JSONObject jo = jarray.getJSONObject(i);
 
-//                String itemId = jo.getString("itemId");
+                String itemId = jo.getString("itemId");
                 String name = jo.getString("name");
                 String gender = jo.getString("gender");
                 String classStudent = jo.getString("classStudent");
@@ -108,7 +108,7 @@ public class listItem extends AppCompatActivity {
 
                 HashMap<String, String> item = new HashMap<>();
 
-//                item.put("itemId",itemId);
+                item.put("itemId",itemId);
                 item.put("name",name );
                 item.put("gender", gender);
                 item.put("classStudent",classStudent);
@@ -123,7 +123,7 @@ public class listItem extends AppCompatActivity {
 
 
         adapter = new SimpleAdapter(this,list,R.layout.list_item_row,
-                new String[]{"name","gender","classStudent"},new int[]{R.id.tv_item_name,R.id.tv_brand,R.id.tv_price});
+                new String[]{"name","gender","classStudent","itemId"},new int[]{R.id.tv_item_name,R.id.tv_brand,R.id.tv_price});
 
 
         listView.setAdapter(adapter);
@@ -149,14 +149,34 @@ public class listItem extends AppCompatActivity {
         });
     }
 
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-//    @Override
-//    public void onPointerCaptureChanged(boolean hasCapture) {
-//
-//    }
-//
-//    @Override
-//    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//
-//    }
+        Intent intent = new Intent(this, itemDetails.class);
+        HashMap<String,String> map =(HashMap)parent.getItemAtPosition(position);
+        String itemId = map.get("itemId").toString();
+        String name = map.get("name").toString();
+        String gender = map.get("gender").toString();
+        String classStudent = map.get("classStudent").toString();
+
+
+        // String sno = map.get("sno").toString();
+
+        // Log.e("SNO test",sno);
+        intent.putExtra("itemId",itemId);
+        intent.putExtra("name",name);
+        intent.putExtra("gender",gender);
+        intent.putExtra("classStudent",classStudent);
+
+
+        startActivity(intent);
+
+    }
+
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
+    }
+
+
 }

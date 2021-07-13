@@ -20,7 +20,7 @@
         </activity>
         <activity android:name=".add_item"/>
         <activity android:name=".listItem"/>
-<!--        <activity android:name=".itemDetails"/>-->
+        <activity android:name=".itemDetails"/>
     </application>
 
 </manifest>
