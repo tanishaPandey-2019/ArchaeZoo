@@ -20,8 +20,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonAddItem = (Button)findViewById(R.id.btn_add_item);
         buttonAddItem.setOnClickListener(this);
 
-        buttonListItem = (Button)findViewById(R.id.btn_list_items);
-        buttonListItem.setOnClickListener(this);
+//        buttonListItem = (Button)findViewById(R.id.btn_list_items);
+//        buttonListItem.setOnClickListener(this);
 
     }
 
@@ -34,11 +34,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }
 
-        if(v==buttonListItem){
-
-            Intent intent = new Intent(getApplicationContext(),listItem.class);
-            startActivity(intent);
-        }
+//        if(v==buttonListItem){
+//
+//            Intent intent = new Intent(getApplicationContext(),listItem.class);
+//            startActivity(intent);
+//        }
 
     }
 }
