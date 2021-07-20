@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        buttonAddItem = (Button)findViewById(R.id.btn_add_item);
+        buttonAddItem = (Button)findViewById(R.id.b1);
         buttonAddItem.setOnClickListener(this);
 
 //        buttonListItem = (Button)findViewById(R.id.btn_list_items);
