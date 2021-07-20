@@ -1,33 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="30dp"
+    android:background="@drawable/sitepic"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btn_add_item"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="160dp"
-        android:layout_marginRight="160dp"
-        android:text="Add Item "
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
 
-    <Button
-        android:id="@+id/btn_list_items"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="50dp"
-        android:text="List Items"
-        app:layout_constraintEnd_toEndOf="@+id/btn_add_item"
-        app:layout_constraintTop_toBottomOf="@+id/btn_add_item"
-        android:layout_marginRight="8dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/backgroundlayout"
+        android:padding="35dp">
+        <Button
+            android:id="@+id/b1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ADD ITEM"
+            android:layout_above="@+id/b2"
+            android:background="@drawable/additembuttonshape"
+            android:textStyle="bold"
+            android:layout_marginBottom="35dp"
+            android:drawableRight="@drawable/arrowshape"
+            android:textColor="#FFFFFF"
+            android:padding="30dp"/>
+        <Button
+            android:id="@+id/b2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LIST ITEMS"
+            android:layout_centerInParent="true"
+            android:background="@drawable/listitemsbuttonshape"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:drawableRight="@drawable/arrowshape"
+            android:padding="30dp"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
